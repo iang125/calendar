@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @response.question %>
+</p>
+
+<p>
+  <strong>Atending:</strong>
+  <%= @response.atending %>
+</p>
+
+<p>
+  <strong>Arivle time:</strong>
+  <%= @response.arivle_time %>
+</p>
+
+<p>
+  <strong>Deparcher time:</strong>
+  <%= @response.deparcher_time %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @response.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_response_path(@response) %> |
+<%= link_to 'Back', responses_path %>
