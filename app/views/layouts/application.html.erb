@@ -2,13 +2,62 @@
 <html>
 <head>
   <title>Calendar</title>
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Title</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "users", users_url %></li>
+      <li><%= link_to "events", events_url %></li>
+      <li><%= link_to "questions", questions_url %></a></li>
+      <li><%= link_to "responses", responses_url %></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to  %></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li><a href="#">Separated link</a></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+  <div class="container">
+    <p>
+      <% if current_user.present? %>
+        Signed in as <%= current_user.email %>.
+        <%= link_to "Sign Out", session_url, :method => 'delete' %>
+      <% else %>
+        <%= link_to "Sign in to vote", new_session_url %>
+      <% end %>
+    </p>
+
 
 <%= yield %>
+
+  </div>
 
 </body>
 </html>

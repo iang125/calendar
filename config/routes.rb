@@ -1,4 +1,5 @@
 Calendar::Application.routes.draw do
+
   resources :events
 
   resources :questions
@@ -47,7 +48,7 @@ Calendar::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
