@@ -1,4 +1,7 @@
 Calendar::Application.routes.draw do
+  get '/sessions/new' => 'sessions#new', :as => 'new_session'
+  post '/sessions' => 'sessions#create', :as => 'sessions'
+  delete '/sessions' => 'sessions#destroy', :as => 'session'
 
   resources :events
 
