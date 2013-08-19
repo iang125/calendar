@@ -40,6 +40,7 @@ class ResponsesController < ApplicationController
   # PATCH/PUT /responses/1
   # PATCH/PUT /responses/1.json
   def update
+
     respond_to do |format|
       if @response.update(response_params)
         format.html { redirect_to @response, notice: 'Response was successfully updated.' }

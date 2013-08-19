@@ -1,9 +1,11 @@
 class Event < ActiveRecord::Base
-  has_one :type
-  has_many :question
-  has_many :responses, :through => :question
+  has_many :responses
 
-  def host
-    User.find_by_id(self.user_id)
-  end
+  belongs_to :host, class_name: User, foreign_key: :user_id
+
+  # def host
+  #   User.find_by_id(self.user_id)
+  #   User.find_by(id:self.user_id)
+  # end
+
 end

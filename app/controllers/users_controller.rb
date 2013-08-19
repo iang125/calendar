@@ -1,5 +1,25 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  def home
+    if current_user.present?
+      @events = Event.where(user_id:current_user.id)
+      @user = current_user
+      # @response = Response.where(user_id:current_user.id)
+      # @positive_responses = @response.where(:atending => true)
+      # @positive_responses.each do |respons_to|
+      #   @events << Event.find_by(id:respons_to.event_id)
+      # end
+
+      responses = Response.includes(:event).where(user_id:current_user.id, attending: true)
+
+      # attending_events = responses.map(&:event)
+      attending_events = responses.map{ |response| response.event }
+
+      @events += attending_events
+    else
+      redirect_to users_url
+    end
+  end
 
   # GET /users
   # GET /users.json

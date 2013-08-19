@@ -10,7 +10,9 @@ Calendar::Application.routes.draw do
 
   resources :responses
 
+  get '/users/home' => 'users#home', :as => 'home'
   resources :users
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
