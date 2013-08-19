@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20130816203951) do
   end
 
   create_table "responses", force: true do |t|
-    t.integer  "question"
+    t.integer  "question_id"
     t.boolean  "atending"
     t.datetime "arivle_time"
     t.datetime "deparcher_time"

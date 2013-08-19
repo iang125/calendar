@@ -1,7 +1,7 @@
 class CreateResponses < ActiveRecord::Migration
   def change
     create_table :responses do |t|
-      t.integer :question
+      t.integer :question_id
       t.boolean :atending
       t.datetime :arivle_time
       t.datetime :deparcher_time

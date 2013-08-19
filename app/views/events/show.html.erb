@@ -31,8 +31,13 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
+  <strong>Host:</strong>
+  <%= @event.host.name %>
+</p>
+
+<p>
+  <strong>send:</strong>
+  <%= render 'event_invite_form' %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

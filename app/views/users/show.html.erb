@@ -10,15 +10,11 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+<% if @user.admin = true %>
+  <p>
+    <strong>Admin</strong>
+  </p>
+<% end %>
 
 <p>
   <strong>Location:</strong>
