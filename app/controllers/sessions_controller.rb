@@ -1,12 +1,21 @@
 class SessionsController < ApplicationController
   def new
+
   end
 
   def create
     user = User.find_by(:email => params[:email])
     if user.present? && user.authenticate(params[:password])
-      Time.zone = "Berlin"
-      puts "#{Time.zone}"
+      if user.zone.present? == false
+        Rails.logger.info "the users zone is #{user.zone}"
+         user.zone = params[:zone]
+         user.save
+         Time.zone = user.zone
+      else
+        Rails.logger.info "the users zone is #{user.zone} and had alrady bin set"
+        Time.zone = user.zone
+      end
+      Rails.logger.info "the time zone is #{Time.zone}"
       session[:user_id] = user.id
       redirect_to root_url, :notice => "Welcome back, #{user.name}."
     else

@@ -16,6 +16,13 @@
   </p>
 <% end %>
 
+<% if @user.zone.present?%>
+  <p>
+    <strong>Location:</strong>
+    <%= @user.zone.name %>
+  </p>
+<% end %>
+
 <p>
   <strong>Location:</strong>
   <%= @user.location_id %>
