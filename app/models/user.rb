@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :calendar
+
   belongs_to :zone
   has_many :responses
   has_many :events, :through => :responses

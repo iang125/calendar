@@ -8,7 +8,7 @@
 
   <%# if @user.zone.present? == false %>
     <%= label_tag :zone, "time zone:" %>
-    <%= select_tag :zone, options_from_collection_for_select(Zone.all, :name, :name) %>
+    <%= select_tag :zone, options_from_collection_for_select(Zone.all, :id, :name) %>
   <%# end %>
 
   <%= submit_tag "Sign In", :class => 'btn btn-success' %>

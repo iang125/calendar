@@ -6,6 +6,7 @@
       <th>Name</th>
       <th>Type</th>
       <th>Discription</th>
+      <th></th>
       <th>End time</th>
       <th>Start time</th>
       <th>Location</th>
@@ -22,8 +23,9 @@
         <td><%= event.name %></td>
         <td><%= event.type_id %></td>
         <td><%= event.discription %></td>
-        <td><%= event.end_time %></td>
-        <td><%= event.start_time %></td>
+        <th></th>
+        <td><%= event.end_time.strftime("%B %d, %Y at %I:%M%P") %></td>
+        <td><%= event.start_time.strftime("%B %d, %Y at %I:%M%P") %></td>
         <td><%= event.location_id %></td>
         <td><%= event.user_id %></td>
         <td><%= link_to 'Show', event %></td>

@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
     user = User.find_by(:email => params[:email])
     if user.present? && user.authenticate(params[:password])
       if user.zone.present? == false
-        Rails.logger.info "the users zone is #{user.zone}"
+        Rails.logger.info "the users zone is #{user.zone.name}"
          user.zone = params[:zone]
          user.save
-         Time.zone = user.zone
+         Time.zone = user.zone.name
       else
         Rails.logger.info "the users zone is #{user.zone} and had alrady bin set"
-        Time.zone = user.zone
+        Time.zone = user.zone.name
       end
       Rails.logger.info "the time zone is #{Time.zone}"
       session[:user_id] = user.id
