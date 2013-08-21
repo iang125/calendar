@@ -13,17 +13,18 @@
 
     <p>
       <strong>Arivle time:</strong>
-      <%= @response.arivle_time %>
+      <%= @response.arivle_time.strftime("%B %d, %Y at %I:%M%P") %>
     </p>
     <p>
       <strong>Deparcher time:</strong>
-      <%= @response.deparcher_time %>
+      <%= @response.deparcher_time.strftime("%B %d, %Y at %I:%M%P") %>
     </p>
 
   <% elsif @response.atending == false %>
     <strong>Im not atending :(</strong>
   <% else %>
     <strong>are you going to atend?</strong>
+    <%= render 'form' %>
   <% end %>
 
 </p>

@@ -11,6 +11,8 @@
     </div>
   <% end %>
     <%= hidden_field_tag "response[event_id]", @event.id %>
+    <%= hidden_field_tag "response[arivle_time]", @event.start_time %>
+    <%= hidden_field_tag "response[deparcher_time]", @event.end_time %>
 
     <%= f.label :user_id, "name" %>
     <%= f.collection_select :user_id, User.all, :id, :name %>
