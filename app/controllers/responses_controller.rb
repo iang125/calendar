@@ -70,6 +70,6 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.require(:response).permit(:question, :atending, :arivle_time, :deparcher_time, :user_id)
+      params.require(:response).permit(:event_id, :atending, :arivle_time, :deparcher_time, :user_id)
     end
 end

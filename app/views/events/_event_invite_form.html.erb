@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
+    <%= hidden_field_tag "response[event_id]", @event.id %>
 
     <%= f.label :user_id, "name" %>
     <%= f.collection_select :user_id, User.all, :id, :name %>
-
 
     <%= f.submit "add attendy"%>
 

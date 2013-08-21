@@ -1,24 +1,34 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Question:</strong>
-  <%= @response.question %>
+  <strong>event:</strong>
+  <%= @response.event.name %>
+</p>
+<p>
+  <strong>host:</strong>
+  <%= @response.event.host.name %>
+</p>
+<p>
+  <% if @response.atending == true%>
+    <strong>Im Atending!!</strong>
+
+    <p>
+      <strong>Arivle time:</strong>
+      <%= @response.arivle_time %>
+    </p>
+    <p>
+      <strong>Deparcher time:</strong>
+      <%= @response.deparcher_time %>
+    </p>
+
+  <% elsif @response.atending == false %>
+    <strong>Im not atending :(</strong>
+  <% else %>
+    <strong>are you going to atend?</strong>
+  <% end %>
+
 </p>
 
-<p>
-  <strong>Atending:</strong>
-  <%= @response.atending %>
-</p>
 
-<p>
-  <strong>Arivle time:</strong>
-  <%= @response.arivle_time %>
-</p>
-
-<p>
-  <strong>Deparcher time:</strong>
-  <%= @response.deparcher_time %>
-</p>
 
 <p>
   <strong>User:</strong>
